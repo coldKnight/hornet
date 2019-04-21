@@ -33,7 +33,7 @@ int exec(int argc, char* argv[]) {
 
     HornetGraph hornet_graph(hornet_init);
 
-	HarmonicCentrality hc(hornet_graph);
+	HCentrality hc(hornet_graph);
 
 	vid_t root = graph.max_out_degree_id();
 	if (argc==3)
