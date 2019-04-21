@@ -33,19 +33,18 @@ int exec(int argc, char* argv[]) {
 
     HornetGraph hornet_graph(hornet_init);
 
-    ExactCLC exact_clc(hornet_graph);
-/*
+    ClosenessCentrality clc(hornet_graph);
+
 	vid_t root = graph.max_out_degree_id();
 	if (argc==3)
 	  root = atoi(argv[2]);
     // root = 226410;
     cout << "Root is " << root << endl;
-*/  
-    exact_clc.reset();
-    //clc.setRoot(root);
+    clc.reset();
+    clc.setRoot(root);
 
     cudaProfilerStart();TM.start();
-    exact_clc.run();
+    clc.run();
 
     TM.stop();cudaProfilerStop();
     TM.print("ClosenessCentrality");

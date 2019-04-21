@@ -33,19 +33,18 @@ int exec(int argc, char* argv[]) {
 
     HornetGraph hornet_graph(hornet_init);
 
-    ExactHC exact_hc(hornet_graph);
-/*
+	HarmonicCentrality hc(hornet_graph);
+
 	vid_t root = graph.max_out_degree_id();
 	if (argc==3)
 	  root = atoi(argv[2]);
     // root = 226410;
     cout << "Root is " << root << endl;
-*/  
-    exact_hc.reset();
-    //hc.setRoot(root);
+    hc.reset();
+    hc.setRoot(root);
 
     cudaProfilerStart();TM.start();
-    exact_hc.run();
+    hc.run();
 
     TM.stop();cudaProfilerStop();
     TM.print("HarmonicCentrality");
