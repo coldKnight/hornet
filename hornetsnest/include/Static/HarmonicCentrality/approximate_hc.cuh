@@ -3,7 +3,9 @@
  * @author Oded Green                                                       <br>
  *   NVIDIA Corporation                                                     <br>       
  *   ogreen@nvidia.com                                                      <br>
- * @date July, 2018
+ * @author Vatsal Srivastava                                              <br>
+ *   Georgia Institute of Technology                                        <br>       
+ * @date April, 2019
  *
  * @copyright Copyright © 2017 Hornet. All rights reserved.
  *
